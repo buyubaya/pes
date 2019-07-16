@@ -1,0 +1,10 @@
+{
+    "RegularWithdrawal": "Regular Withdrawal",
+    "SelectRegularWithdrawalOption": "Select Regular Withdrawal Option",
+    "AddRegularWithdrawal": "Add Regular Withdrawal",
+    "AmendRegularWithdrawal": "Amend Regular Withdrawal",
+    "RemoveRegularWithdrawal": "Remove Regular Withdrawal",
+    "TypeOfWithdrawal": "Type of withdrawal:",
+    "TypeOfWithdrawalOptions": ["Select","Amount each year","Percentage each year of the plan value"],
+    "ModalSubmitConfirmationTitle" : "Regular Withdrawal"
+}

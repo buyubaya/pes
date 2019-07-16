@@ -1,0 +1,64 @@
+{
+    "myAccount": {
+        "username": "Username",
+        "forename": "Forename",
+        "surname": "Surname",
+        "email": "Email",
+        "role": "Role",
+        "fsaAuthorisationNumber": "FCA authorisation number (not IRN)",
+        "firmname": "Firm name",
+        "firmPostcode": "Firm postcode",
+        "keepInformed":"I wish to receive occasional emails to keep me informed of products and services",
+        "myAccountHelpText": "Further information on upgrading your account, and the additional functionality available following upgrade, is available within <a href=\"{0}\" target=\"_blank\">My profile help</a>."
+    },    
+    "upgradeAccess": {
+        "myProfileHelpText": "Further information on upgrading your account, and the additional functionality available following upgrade,  is available within <a href=\"{0}\" target=\"_blank\">My profile help</a>.",
+        "role": "Role",
+        "roleData": [
+            {"value": "", "label": "Select"},
+            {"value": "PA", "label": "PA"},
+            {"value": "IFA", "label": "Adviser"}
+        ],
+        "fsaAuthorisationNumber": "FCA authorisation number (not IRN)",
+        "firmPostcode": "Firm postcode",
+        "adviserCode": "Agency code",
+        "adviserUsername": "Adviser's username",
+
+        "accessUpgradedText": "Your access has been upgraded",
+        "upgradedToValidatedOrValidationBypassedText": "To continue select an option from one of the Menus above or go to our <a href=\"{0}\" class=\"text-underline\">Home</a> page",
+        
+        "nextSteps": "Next steps",
+        "upgradedToValidatingText": "<p>Thank you for providing the additional security information. You may now submit business online.</p><p>In addition, we have emailed your firm's principle at admin@mydomain.com, so that they can validate your request for access to client and plan data.</p><p>As part of this communication, we have provided a validation code that needs to be forwarded to you. Once you have entered this code winthin the My Profile area of the Website you will be able to access our full range of on-line services.</p><p>Your validation code remains valid for 28 days.</p>",
+
+        "downgradedFromValidatingText": "<p>We have been unable to complete the upgrade to your access permissions because your validation code has expired.</p><p>We have reset your details to enable you to start the <a href=\"{0}\" class=\"text-underline\">Upgrade</a> process again.</p><p>If you do not wish to restart the Upgrade process now, continue by selecting an option from one of the Menus above or go to our <a href=\"{1}\" class=\"text-underline\">Home</a> Page.</p>",
+
+        "validationCodeText": "Your validation code has been sent to your firm's principle to be forwarded to you. Please remember this code is only valid for 28 days.",
+        "validationCode": "Validation code"
+    },
+
+    "agencyCode": {
+        "myProfileHelpText": "For information on managing your account profile please see <a href=\"{0}\" target=\"_blank\">My profile help</a>.",
+        "enterAgencyCode": "Enter Agency code",
+        "agencyCode": "Agency code",
+        "default": "Default",
+        "add": "Add",
+        "save": "Save",
+        "delete": "Delete"
+    },
+
+    "delegation": {
+        "myProfileHelpText": "For information on managing your account profile please see <a href=\"{0}\" target=\"_blank\">My profile help</a>.",
+        "addInfoAdiviser": "Enter the Username of the person to work on your behalf. This is the first field on their \"My Account\" screen",
+        "addInfoPA": "Please enter the Username of the Adviser on whose behalf you wish to work, then select Add. Their Username will be the first field on their 'My Account' Screen.",
+        "addUser": "Add user",
+        "delegationsFrom": "Users who can work on your behalf",
+        "delegationsTo": "Users you can work on behalf of",
+        "name": "Name",
+        "role": "Role",
+        "delegatedBy": "Delegated By",
+        "effectiveDate": "Effective Date",
+        "add": "Add",
+        "save": "Save",
+        "delete": "Delete"
+    }
+}

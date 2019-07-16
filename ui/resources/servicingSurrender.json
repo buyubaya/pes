@@ -1,0 +1,29 @@
+{
+    "surrenderTitle": "Surrender",
+    "surrenderTypeLabel": "Select required surrender type",
+    "surrenderTypeData": [
+        {"value": "FULL_SURRENDER", "label": "Full surrender"},
+        {"value": "PARTIAL_SURRENDER", "label": "Partial surrender"}
+    ],
+    "partialSurrenderTitle": "Enter partial surrender details",
+    "partialSurrenderTypeLabel": "Partial Surrender Type",
+    "partialSurrenderTypeData": [
+        {"value": "PROPORTIONATELY_ACROSS_ALL_FUNDS", "label": "Proportionately across all funds"},
+        {"value": "FROM_SPECIFIC_FUNDS", "label": "From specific funds"}
+    ],
+    "B34PartialSurrenderTypeData": [
+        {"value": "PROPORTIONATELY_ACROSS_ALL_MINI_POLICIES", "label": "Proportionately across all mini-policies"},
+        {"value": "CANCELLATION_OF_WHOLE_MINI_POLICES", "label": "Cancellation of whole mini-policies"}
+    ],
+    "totalSurrenderAmountLabel": "Total surrender amount",
+    "specifyFundsTitle": "Specify funds and requested amount for surrender",
+    "fundName": "Fund name",
+    "currentValue": "Current value (£)",
+    "surrenderAmount": "Surrender amount (£)",
+    "paymentTypeLabel": "Select payment type",
+    "paymentTypeQuestion": "How do you want to receive payments?",
+    "paymentTypeData": [
+        {"value": "BACS", "label": "Bank Transfer"},
+        {"value": "CHEQUE", "label": "Cheque"}
+    ]
+}

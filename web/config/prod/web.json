@@ -1,0 +1,33 @@
+{
+	"apiBaseUrl": "https://DEALA09432.emea.zurich.corp",
+	"curtisBankPortalUrl": "https://capitatest.curtisbanks.co.uk/portal/capita/sso?ifa.code={0}&plan.id={1}",
+	"directDebitFormPDF": "http://www.zurich.co.uk/internet/zurichintermediary/Documents/115488.pdf",
+	"financialAdvisorAuthorityFormUrl": "https://www.zurichintermediary.co.uk/_/media/dbe/uk-intermediary/docs/123455.pdf",
+	"headerUrl": {
+		"myProfile": "/profile"
+	},
+	"termsOfUseUrl": "https://www.zurichintermediary.co.uk/en-gb/services/legal",
+	"footerUrl": {
+		"contact": "https://www.zurichintermediary.co.uk/en-gb/about-zurich/contact-us",
+		"legal": "https://www.zurichintermediary.co.uk/en-gb/services/legal",
+		"privacy": "https://www.zurichintermediary.co.uk/en-gb/services/privacy",
+		"accessibility": "https://www.zurichintermediary.co.uk/en-gb/services/accessibility",
+		"cookies": "https://www.zurichintermediary.co.uk/en-gb/services/cookies",
+		"sitemap": "https://www.zurichintermediary.co.uk/en-gb/sitemap"
+	},
+	"myProfileHelp": "https://www.zurichintermediary.co.uk/en-gb/external/registration-and-upgrade-help",
+	"helpPage":"https://www.zurichintermediary.co.uk/en-gb/external/plan-enquiry-help",
+	"errorPages":{
+		"pes404":"https://www.zurichintermediary.co.uk/global/error-pages/PES-404",
+		"pes500":"https://www.zurichintermediary.co.uk/global/error-pages/PES-500"
+	},
+	"oktaConfig": {
+		"client_id": "0oa2v7zvp7yZfatIC0x6",
+		"issuer": "https://zuklsas-dev.oktapreview.com/oauth2/default",
+		"redirect_uri": "https://DEALA09432.emea.zurich.corp/implicit/callback"
+	},
+	"oktaLoginProxy":"https://10.41.87.94:32169/login?clientId=0oa2v7zvp7yZfatIC0x6&redirectUri=https://DEALA09432.emea.zurich.corp/implicit/callback",
+	"oktaDomain": ".zurich.co.uk",
+	"epoch": "1514739600",
+	"sessionTimeOut": 1140000
+}

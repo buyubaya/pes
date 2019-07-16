@@ -1,0 +1,14 @@
+{
+	"planNumber": "Plan number",
+	"planHolder": "Planholder",
+	"product": "Product",
+	"currentValue": "Current value",
+	"cashIn": "Cash-in",
+	"transferValue": "Transfer value",
+	"clearButton": "Clear",
+	"submitButton": "Submit",
+	"details":"Details",
+	"servicing": "Servicing",
+	"planStatement": "Plan Statement",
+	"warning": "Warning"
+}

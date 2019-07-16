@@ -1,0 +1,151 @@
+{
+    "amend": {
+        "updatePersonalDetails": "Update personal details",
+        "updateOrganisationDetails": "Update organisation details",
+        "updateTrusteeDetails": "Update trustee details",
+
+        "amendName": "Amend name",
+        "title": "Title",
+        "forenames": "Forenames",
+        "surname": "Surname",
+        "typeOfEvidenceSeen": "Type of evidence seen",
+        "otherEvidenceType": "Other evidence type",
+        "planNumber": "Plan number",
+        "currentDetails": "Current details",
+        "updates": "Updates",
+        "organisationName": "Organisation name",
+        "organisationNumber": "Organisation number",
+
+        "amendOtherDetails": "Amend other details",
+        "nationalInsuranceNumber": "National insurance number",
+        "newNationalInsuranceNumber": "New national insurance number",
+        "nationality": "Nationality",
+        "newNationality": "New nationality",
+        "ukResidency": "UK residency?",
+        "ordinarilyResident": "Ordinarily resident?",
+        "sex": "Sex",
+        "newSex": "New sex",
+        "employmentStatus": "Employment status",
+        "newEmploymentStatus": "New employment status",
+        "occupation": "Occupation",
+        "newOccupation": "New occupation",
+
+        "amendAddress": "Amend address",
+        "addressLine1": "Address line 1",
+        "addressLine2": "Address line 2",
+        "addressLine3": "Address line 3",
+        "addressLine4": "Address line 4",
+        "postCode": "Post code",
+        "effectiveFrom": "Effective from",
+
+        "amendAlternativeAddress": "Amend alternative address",
+
+        "amendContactDetails": "Amend contact details",
+        "daytimeTelephoneNumber": "Daytime telephone number",
+        "eveningtimeTelephoneNumber": "Eveningtime telephone number",
+        "mobileTelephoneNumber": "Mobile telephone number",
+        "emailAddress": "Email address",
+
+        "amendDateOfBirth": "Amend date of birth",
+        "newDateOfBirth": "New date of birth",
+
+        "applyAllChanges": "Apply all changes to the following plans",
+        "applyAllChangesText": "Changes were requested be applied to the following plans",
+
+        "returnToHistoryText": "Return to plan history"
+    },
+
+    "regularWithdrawal": {
+        "regularWithdrawalTitle": "Regular withdrawals",
+        "regularWithdrawal": "Regular withdrawal:",
+        "typeOfWithdrawal": "Type of withdrawal:",
+        "amountPercentageEachYear": "Amount / Percentage each year:",
+        "percentageEachYear": "Percentage each year:",
+        "withdrawalIncrease": "How is the withdrawal to increase?:",
+        "annualPercentageIncrease": "Annual percentage increase:",
+        "frequencyOfRegularWithdrawal": "Frequency of regular withdrawals:",
+        "firstPayment": "Select month of first payment:",
+        "startDate": "Start date",
+        "totalAmount": "Total amount to be taken from funds:",
+        "amountEachPaymentB34": "{0} / {1}% The maximum fund withdrawal is 7.5% of the total plan value",
+        "regularWithdrawalType": "Regular withdrawal type:",
+        "regularWithdrawalTypePAAF": "Proportionately across all funds",
+
+        "fundName": "Fund name",
+        "currentValue": "Current value (£)",
+        "withdrawalAmount": "Withdrawal amount of the fund value (£)",
+        "withdrawalAmountPer": "Withdrawal percentage of the fund value",
+        "totalWithdrawalPercentage": "Total plan withdrawal percentage:",
+        "fromSpecificFundsNote": "Fund based withdrawals can be no more than 7.5 % of the total plan value",
+
+        "planNumber": "Plan number:",
+        "planHolderNumber": "Plan holder number:",
+        "advisorName": "Advisor name:",
+        "agentCode": "Agent Code:",
+        "authorisationNumber": "FCA authorisation number:"
+    },
+
+    "incomePayment": {
+        "incomePayments": "Income payments",
+        "incomePaymentOption": "Income payment option"
+    },
+
+    "distribution": {
+        "servicingRequestDetails": "Servicing request details",
+        "distributionChangeOption": "Distribution change option",
+        "distributionPaymentOption": "Distribution payment option"
+    },
+
+    "switchFund": {
+        "fundSwitch": "Fund switch",
+        "fundsPercentageForSwitch": "Funds percentage for switch",
+        "fundName": "Fund name",
+        "percentSwitch": "Switch (%)",
+        "totalCurrentValue": "Total Current Value",
+        "percentageOfInvestment": "Percentage of investment",
+        "percentInvested": "Percent invested",
+        "totalInvested": "Total invested",
+        "regularContributionText": "Regular contributions on this plan must not be re-directed in line with this change.",
+        "currentValueSF": "Current Value",
+        "percentInvestedB34":"% invested",
+        "totalCurrentValueB34": "Total Current Value",
+        "percentSwitchB34": "% Switch",
+
+        "rebalanceFund": "Rebalance funds",
+        "rebalanceFundInvestment": "Rebalance fund investment %",
+        "currentValue": "Current value (£)",
+        "currentInvestment": "Current investment (%)",
+        "newInvestment": "New investment (%)",
+        "totalPlanValue": "Total Plan Value"
+    },
+
+    "surrender": {
+        "fullSurrender": "Full surrender",
+        "partialSurenderProportionally": "Partial surrender proportionally across all funds",
+        "partialSurenderSpecific": "Partial surrender from specific funds",
+        "totalSurrenderAmount": "Total surrender amount £",
+        "fundName": "Fund name",
+        "surrenderAmount": "Surrender amount (£)",
+        "paymentBankTransfer": "Payment will be made by bank transfer",
+        "paymentCheque": "Payment will be made by cheque"
+    },
+
+    "redirectContribution": {
+        "redirectContributionTitle":"Redirect Contribution",
+        "specifyNewContributionAllocation": "Specify New Contribution Allocation",
+        "specifyNewContributionAllocationDesc":"Choose Up To 100 Funds. Enter All Or Part Of The Fund Name And Any Match(Es) Will Then Appear In The 'Investment Funds' List Below."
+    },
+
+    "payeeDetails": {
+        "payeeDetails": "Payee details",
+        "accountHolderName": "Account holder name",
+        "bankBuildingSocietyName": "Bank / Building society name",
+        "branchName": "Branch name",
+        "sortCode": "Sort code",
+        "accountNumber": "Account number",
+        "buildingSocietyRollNumber": "Building society roll number",
+        "planholderText": "The monies are to be paid to a plan holder",
+        "notPlanholderText": "The monies are not to be paid to a plan holder",
+        "trusteeText": "Payments must be made into the Trustees account"
+    }
+}

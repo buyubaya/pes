@@ -1,0 +1,134 @@
+{   
+    "personalDetails": "Personal details",
+    "organisationDetails": "Organisation details",
+    "trusteeDetails": "Trustee details",
+
+    "updatePersonalDetails": "Update personal details",
+    "updateOrganisationDetails": "Update organisation details",
+    "updateTrusteeDetails": "Update trustee contact details",
+    "amendNameSection": {
+        "amendName": "Amend name",
+        "title": "Title",
+        "titlePlaceholder": " ",
+        "titleData": [
+            {"value": "", "label": ""},
+            {"value": "mr", "label": "Mr"},
+            {"value": "mrs", "label": "Mrs"},
+            {"value": "miss", "label": "Miss"},
+            {"value": "ms", "label": "Ms"},
+            {"value": "dr", "label": "Dr"},
+            {"value": "rev", "label": "Rev"},
+            {"value": "sir", "label": "Sir"},
+            {"value": "lady", "label": "Lady"},
+            {"value": "lord", "label": "Lord"},
+            {"value": "dame", "label": "Dame"},
+            {"value": "other", "label": "Other"}
+        ],
+        "otherTitle": "Other title",
+        "forenames": "Forenames",
+        "surname": "Surname",
+        "typeOfEvidenceSeen": "Type of evidence seen",
+        "otherEvidenceType": "Other evidence type",
+        "typeOfEvidencePlaceholder": "Please select",
+        "typeOfEvidenceData": [
+            {"value": "", "label": "Please select"},
+            {"value": "originalMarriageCertificate", "label": "Original Marriage Certificate"},
+            {"value": "decreeNisiorAbsolute", "label": "Decree Nisi or Absolute"},
+            {"value": "deedPollCertificate", "label": "Deed Poll Certificate"},
+            {"value": "birthCertificate", "label": "Birth Certificate"},
+            {"value": "civilPartnershipCertificate", "label": "Civil Partnership Certificate"},
+            {"value": "photocardDrivingLicence", "label": "Photocard Driving Licence"},
+            {"value": "passport", "label": "Passport"},
+            {"value": "other", "label": "Other"}
+        ],
+
+        "planNumber": "Plan number",
+        "currentDetails": "Current details",
+        "updates": "Updates",
+        "organisationName": "Organisation name",
+        "organisationNumber": "Organisation number"
+    },
+
+    "amendOtherDetailsSection": {
+        "amendOtherDetails": "Amend other details",
+        "nationalInsuranceNumber": "National insurance number",
+        "newNationalInsuranceNumber": "New national insurance number",
+        "nationality": "Nationality",
+        "newNationality": "New nationality",
+        "nationalityPlaceholder": "Please select",
+        "nationalityData": [
+            {"value": "", "label": "Please select"},
+            {"value": "uk", "label": "UK"},
+            {"value": "other", "label": "Other"}
+        ],
+        "ukResidency": "UK residency?",
+        "ordinarilyResident": "Ordinarily resident?",
+
+        "sex": "Sex",
+        "newSex": "New sex",
+        "newSexPlaceholder": "Please select",
+        "newSexData": [
+            {"value": "male", "label": "Male"},
+            {"value": "female", "label": "Female"},
+            {"value": "", "label": "Please select"}
+        ],
+        "employmentStatus": "Employment status",
+        "newEmploymentStatus": "New employment status",
+        "newEmploymentStatusPlaceholder": "Please select",
+        "newEmploymentStatusData": [
+            {"value": "housePerson", "label": "House Person"},
+            {"value": "inFullTimeEducation", "label": "In Full-time Education"},
+            {"value": "retired", "label": "Retired"},
+            {"value": "aChildUnder16", "label": "A Child Under The Age Of 16"},
+            {"value": "selfEmployed", "label": "Self-Employed"},
+            {"value": "unemployed", "label": "Unemployed"},
+            {"value": "employed", "label": "Employed"},
+            {"value": "other", "label": "Other"},
+            {"value": "caringAged16", "label": "Caring For A Person Aged 16 Or Over"},
+            {"value": "caringUnder16", "label": "Caring For A Child Aged Under 16"},
+            {"value": "", "label": "Please select"}
+        ],
+        "occupation": "Occupation",
+        "newOccupation": "New occupation"
+    },
+
+    "amendAddressSection": {
+        "amendAddress": "Amend address",
+        "amendAlternativeAddress": "Amend alternative address",
+        "amendAddressSearchMessage": "Enter postcode and optionally house name/number and click <span class=\"text-bold\">\"Search\"</span>",
+        "houseNameNumber": "House name/number",
+        "postCode": "Post code",
+        "effectiveFrom": "Effective from",
+
+        "applyAddressChangesMessage": "Do you want this address change to be applied to other plan holders?"
+    },
+
+    "amendContactDetailsSection": {
+        "amendContactDetails": "Amend contact details",
+        "daytimeTelephoneNumber": "Daytime telephone number",
+        "eveningtimeTelephoneNumber": "Eveningtime telephone number",
+        "mobileTelephoneNumber": "Mobile telephone number",
+        "emailAddress": "Email address",
+        "effectiveFrom": "Effective from"
+    },
+
+    "amendDateOfBirthSection": {
+        "amendDateOfBirth": "Amend date of birth",
+        "correctDateOfBirth": "Correct date of birth",
+        "typeOfEvidenceSeen": "Type of evidence seen",
+        "otherEvidenceType": "Other evidence type",
+        "typeOfEvidencePlaceholder": "Please select",
+        "typeOfEvidenceData": [
+            {"value": "", "label": "Please select"},
+            {"value": "birthCertificate", "label": "Birth Certificate"},
+            {"value": "photocardDrivingLicence", "label": "Photocard Driving Licence"},
+            {"value": "passport", "label": "Passport"},
+            {"value": "other", "label": "Other"}
+        ]
+    },
+
+    "applyAllChangesSection": {
+        "applyAllChangesToTheFollowingPlans": "Apply all changes to the following plans",
+        "applyAllChangesMessage": "If you want the change(s) above to be applied to other Zurich or Sterling life, pension or investment plans please list the numbers here."
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "/api/search/v1/search": "/searchPlan",
+  "/api/search/v1/details/:planID": "/plan-details-:planID",  
+  
+  "/api/notification/v1/addRegularWithdrawal": "/addRegularWithdrawal",
+  "/api/notification/v1/amendRegularWithdrawal": "/amendRegularWithdrawal",
+  "/api/notification/v1/removeRegularWithdrawal": "/removeRegularWithdrawal",
+
+  "/api/lookup/v1/bankDetails/sortCode/:sortCode/account/:account": "/bankDetails-:sortCode-:account", 
+  "/api/lookup/v1/addressLookup/postCode/:id": "/address-lookup",
+  "/api/lookup/v1/address/:id": "/address",
+
+  "/api/notification/v1/amendPersonalDetails": "/amend-personal-details",
+  "/api/notification/v1/amendOrganisationDetails": "/amend-organisation-details",
+  "/api/notification/v1/amendTrusteeDetails": "/amend-trustee-details",
+
+  "/api/notification/v1/distribution":"/submit-distribution",
+  "/api/notification/v1/incomePayment":"/submit-incomePayment",
+  "/api/notification/v1/redirectContribution":"/redirectContribution",
+
+  "/api/fund/v1/funds/product/:productID": "/product-:productID",
+  "/api/notification/v1/specifiedFunds": "/SubmitSpecifiedFunds",
+  "/api/notification/v1/rebalanceFunds": "/SubmitRebalanceFunds",
+
+  "/api/notification/v1/gmfSurrender":"/surrender",
+  "/api/notification/v1/b34Surrender":"/surrender",
+
+  "/api/account/v1/account/:userId": "/my-profile-:userId",
+  "/api/account/v1/account/update/:userId": "/my-profile-update-:userId",
+  "/api/profile/v1/access": "/myprofile-access",
+  "/api/profile/v1/code": "/myprofile-code",
+  "/api/profile/v1/agencyCodes": "/agencyCodes",
+  "/api/delegation/v1/delegation": "/delegations",
+  "/api/profile/v1/validation": "/my-profile-validation-lnguyen54@csc.com",
+  "/api/agency/v1/agency": "/my-profile-agency-lnguyen54@csc.com",
+  "/api/upgradeaccess/v1/validation/:userId":"/my-profile-upgradeaccess-validation-:userId",
+  "/api/upgradeaccess/v1/access":"/my-profile-upgradeaccess-access",
+  "/api/upgradeaccess/v1/validation/:userId/:validationcode":"/my-profile-upgradeaccess-valicationcode",
+
+  "/api/notification/v1/history/:id": "/history",
+  "/api/notification/v1/details/:id": "/history-details-:id"
+}
