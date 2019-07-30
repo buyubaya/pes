@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {bindActionCreators} from 'redux';
+import {compose, bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as PlanActions from '../../actions/PlanDetailsActions';
 import * as PlanApi from '../../api/PlanApi';
@@ -9,12 +9,30 @@ import * as ContentTypes from '../../constants/ContentTypes';
 import ContentApiUtils from '../../api/ContentApiUtils';
 import {get} from 'lodash';
 import ServicingHeader from '../../components/servicing/ServicingHeader';
+import SecurityUtils from '../../utils/SecurityUtils';
+import TransitionUtils from '../../utils/TransitionUtils';
+import {ROUTER_CONFIG} from '../../components/RouterConfig';
+import withClientAuthority from '../../components/withClientAuthority';
+
 
 class ServicingPage extends React.Component {
+    componentWillMount(){
+        if(this.props.router.getCurrentLocation().pathname !== '/' && !SecurityUtils.isServicingRole()){
+            TransitionUtils.navigateTo(PES.basename);
+        }
+    }
+
     componentDidMount(){
         let planId = this.props.params.id;
+        
         if(planId){
-            this.props.api.getPlan({planId});
+            this.props.api.getPlan({planId})
+            .then(plan => {
+                const { checkClientAuthority } = this.props;
+                if(checkClientAuthority){
+                    checkClientAuthority(plan);
+                }
+            });
         }
     }
 
@@ -48,7 +66,10 @@ function mapDispatchToProps(dispatch) {
 	};
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+export default compose(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    ),
+    withClientAuthority(ROUTER_CONFIG)
 )(ServicingPage);

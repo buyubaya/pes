@@ -4,7 +4,7 @@ import { renderInput } from '../../validations/FieldRendering';
 import {required, accountNumber, sortCode} from '../../validations/FieldValidations';
 import Button from '../common/Button';
 import {get, isEmpty} from 'lodash';
-import { debug } from 'util';
+
 
 class SearchForm extends React.Component {
     constructor(props, context) {
@@ -82,7 +82,7 @@ class SearchForm extends React.Component {
             <div className={this.props.className}>
                 <div className='search-row'>
                     <Field
-                        className='input-area pes-input-group'
+                        className='input-area pes-input-group account-number'
                         name='searchAccountNumber'
                         type='text'
                         component={renderInput}
@@ -92,7 +92,7 @@ class SearchForm extends React.Component {
                 </div>
                 <div className='search-row'>
                     <Field
-                        className='input-area pes-input-group'
+                        className='input-area pes-input-group sortcode'
                         name='searchSortCode'
                         type='text'
                         component={renderInput}

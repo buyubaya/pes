@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
-import {Field} from 'redux-form';
+import {connect} from 'react-redux';
+import {Field, getFormSyncErrors} from 'redux-form';
+import * as _ from 'lodash';
 import {renderInput, renderRadioGroup, renderInputGroup} from '../../validations/FieldRendering';
 import {required, buildingRolNumber, accountHolderName,maxLength} from '../../validations/FieldValidations';
 import SearchForm from './SearchForm';
@@ -44,7 +46,8 @@ class PayeeDetails extends React.Component {
 
     static contextTypes = {
         productGroupType: PropTypes.string,
-        searchFormErrors: PropTypes.object
+        searchFormErrors: PropTypes.object,
+        searchFormdirty: PropTypes.object
     };
     
     static defaultProps = {
@@ -55,9 +58,10 @@ class PayeeDetails extends React.Component {
         const {showAccountHolderText} = this.props;
         const productGroupType = this.context && this.context.productGroupType;
         const accountHolderNameValidates = (productGroupType === 'GMF' || productGroupType === 'TIP') ? [required, accountHolderName] : [required];
-        const { searchFormErrors } = this.context;
-        const searchAccountNumberError = searchFormErrors && searchFormErrors.searchAccountNumber;
-        const searchSortCodeError = searchFormErrors && searchFormErrors.searchSortCode;
+        const searchAccountNumberError = _.get(this.props, 'searchFormErrors.searchAccountNumber');
+        const searchSortCodeError = _.get(this.props, 'searchFormErrors.searchSortCode');
+        const searchAccountNumberTouched = _.get(this.props, 'searchFormTouched.searchAccountNumber');
+        const searchSortCodeTouched = _.get(this.props, 'searchFormTouched.searchSortCode');
 
         return (
         <div className='pes-table-list payee-details-area'>
@@ -77,19 +81,21 @@ class PayeeDetails extends React.Component {
                 </div>
                 <div className='tlrow row'>
                     <div className='tlcell col-xs-4 align-bottom'>
-                        <div className={searchAccountNumberError ? 'input-label mb-5 has-error' : 'input-label mb-5'}>
+                        <div className={(searchAccountNumberTouched && searchAccountNumberError) ? 'input-label mb-5 has-error account-number-has-error' : 'input-label mb-5'}>
                             Account number: 
-                            {
+                            {/* {
+                                searchAccountNumberTouched &&
                                 searchAccountNumberError &&
                                 <span className='icon-required'></span>
-                            }
+                            } */}
                         </div>
-                        <div className={searchSortCodeError ? 'input-label has-error' : 'input-label'}>
+                        <div className={(searchSortCodeTouched && searchSortCodeError) ? 'input-label has-error sortcode-has-error' : 'input-label'}>
                             Sort code: 
-                            {
+                            {/* {
+                                searchSortCodeTouched &&
                                 searchSortCodeError &&
                                 <span className='icon-required'></span>
-                            }
+                            } */}
                         </div>
                     </div>
                     <div className='tlcell col-xs-8 bg-inputs-group'>
@@ -197,4 +203,12 @@ class PayeeDetails extends React.Component {
     };    
 };
 
-export default PayeeDetails;
+export default connect(
+    state => ({
+        searchFormErrors: getFormSyncErrors('searchForm')(state),
+        searchFormTouched: {
+            searchAccountNumber: _.get(state, `form.searchForm.fields.searchAccountNumber.touched`),
+            searchSortCode: _.get(state, `form.searchForm.fields.searchSortCode.touched`)
+        }
+    })
+)(PayeeDetails);

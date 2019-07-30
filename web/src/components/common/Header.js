@@ -39,32 +39,8 @@ class Header extends React.Component {
     }
 
     async signOut(){
-        const sessionExists = await this.auth._oktaAuth.session.exists();
-
-        // LOG OUT IF SESSION EXISTS
-        if(sessionExists){
-            this.setState({ isSigningOut: true });
-            this.auth.logout(PES.basename)
-            .then(() => {
-                this.clearDataOnSignOut();
-                TransitionUtils.navigateTo(PES.basename);
-                // this.setState({ isSigningOut: false });
-            })
-            .catch(err => { 
-                console.warn("signOut:" + err.toString());
-            });
-        }
-        else {
-            this.clearDataOnSignOut();
-            TransitionUtils.navigateTo(PES.basename);
-        }
-    }
-
-    clearDataOnSignOut(){
-        localStorage.removeItem('token');
-        localStorage.removeItem('currentTab');
-        sessionStorage.removeItem('SearchFormSession');
-        AuthUtils.removeUserInfo();
+        this.setState({ isSigningOut: true });
+        AuthUtils.signOut(this.auth);      
     }
 
     isLinkActive(link){

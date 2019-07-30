@@ -81,10 +81,10 @@ class AgencyCodesTab extends React.Component {
     }
 
     addAgencyCode(values, dispatch, props){
-
-        if(_.isEmpty(values.agencyCode)){
+        if(_.isEmpty(values.agencyCode) || /[^a-zA-Z0-9]/g.test(values.agencyCode)){
             throw new SubmissionError({_error: 'Agency code invalid'});
         } 
+        
         let agencyCode = '';
         if(_.isEmpty(values.agencyCode) == false){
             agencyCode = values.agencyCode;

@@ -4,34 +4,45 @@ import {connect} from 'react-redux';
 import * as PlanApi from '../api/PlanApi';
 import * as ContentTypes from '../constants/ContentTypes';
 import ContentApiUtils from '../api/ContentApiUtils';
-import {find, isEqual} from 'lodash';
+import * as _ from 'lodash';
 
 
 /******************** ROUTER CONFIG ********************/
-const ROUTER_CONFIG = {
+export const ROUTER_CONFIG = {
     "/": {
-        resources: [ContentTypes.SEARCH_PLAN],
-        authenticationCheck: false,
-        authorised: false,
-        allowedParams: []
+        resources: [ContentTypes.SEARCH_PLAN]
     },
     "/plan-details/:id": {
         resources: [ContentTypes.PLAN_DETAILS]
     },
     "/servicing/amend/:amendType/:id(/:planHolderIndex)": {
-        resources: [ContentTypes.SERVICING_AMEND]
+        resources: [ContentTypes.SERVICING_AMEND],
+        clientAuthorityShouldBeChecked: false
+    },
+    "/servicing/income-payment/:id": {
+        clientAuthorityShouldBeChecked: true
     },
     "/servicing/regular-withdrawal/:id": {
-        resources: [ContentTypes.SERVICING_REGULAR_WITHDRAWAL]
+        resources: [ContentTypes.SERVICING_REGULAR_WITHDRAWAL],
+        clientAuthorityShouldBeChecked: true
+    },
+    "/servicing/switch-fund/:id": {
+        clientAuthorityShouldBeChecked: true
     },
     "/servicing/surrender/:id": {
-        resources: [ContentTypes.SERVICING_SURRENDER]
+        resources: [ContentTypes.SERVICING_SURRENDER],
+        clientAuthorityShouldBeChecked: true
     },
     "/servicing/redirect-contribution/:id": {
-        resources: [ContentTypes.SERVICING_REDIRECT_CONTRIBUTION]
+        resources: [ContentTypes.SERVICING_REDIRECT_CONTRIBUTION],
+        clientAuthorityShouldBeChecked: true
+    },
+    "/servicing/distribution/:id": {
+        clientAuthorityShouldBeChecked: true
     },
     "/servicing/history-details/:id/:historyId": {
-        resources: [ContentTypes.SERVICING_HISTORY_DETAILS]
+        resources: [ContentTypes.SERVICING_HISTORY_DETAILS],
+        clientAuthorityShouldBeChecked: false
     },
     "/profile": {
         resources: [ContentTypes.MY_PROFILE]

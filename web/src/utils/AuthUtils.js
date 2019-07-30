@@ -3,6 +3,8 @@ import * as MyProfileApi from '../api/MyProfileApi';
 import * as MyProfileActions from '../actions/MyProfileActions';
 import secureStorage from './SecureStorage';
 
+import TransitionUtils from '../utils/TransitionUtils';
+
 export default class AuthUtils {
 	static getUserId() {
 		const tokens = localStorage.getItem('okta-token-storage');
@@ -62,5 +64,32 @@ export default class AuthUtils {
 			AuthUtils.setUserInfo(JSON.stringify(res));
 			return Promise.resolve(res);
 		});
+	}
+
+	static async signOut(auth){
+		const sessionExists = await auth._oktaAuth.session.exists();
+
+		// LOG OUT IF SESSION EXISTS
+		if(sessionExists){
+			auth.logout(PES.basename)
+			.then(() => {
+				AuthUtils.clearDataOnSignOut();
+				TransitionUtils.navigateTo(PES.basename);
+			})
+			.catch(err => { 
+				console.warn("signOut:" + err.toString());
+			});
+		}
+		else {
+			AuthUtils.clearDataOnSignOut();
+			TransitionUtils.navigateTo(PES.basename);
+		}
+	}
+
+	static clearDataOnSignOut(){
+		localStorage.removeItem('token');
+		localStorage.removeItem('currentTab');
+		sessionStorage.removeItem('SearchFormSession');
+		AuthUtils.removeUserInfo();
 	}
 }

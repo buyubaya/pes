@@ -6,7 +6,6 @@ import Auth from '../okta/Auth';
 
 // UTILS
 import EnvironmentUtils from '../utils/EnvironmentUtils';
-import TransitionUtils from '../utils/TransitionUtils';
 import AuthUtils from '../utils/AuthUtils';
 
 
@@ -53,39 +52,20 @@ const withInactivity = Comp => {
             for (let i in this.events) {
                 window.removeEventListener(this.events[i], this.resetTimeout);
             }
+
+            if(this.signOutTimer){
+                clearTimeout(this.signOutTimer);
+            }
         }
     
         async signOut(){
             for (let i in this.events) {
                 window.removeEventListener(this.events[i], this.resetTimeout);
             }
-            
-            const sessionExists = await this.auth._oktaAuth.session.exists();
 
-            // LOG OUT IF SESSION EXISTS
-            if(sessionExists){
-                this.auth.logout(PES.basename)
-                .then(() => {
-                    this.clearDataOnSignOut();
-                    TransitionUtils.navigateTo(PES.basename);
-                })
-                .catch(err => { 
-                    console.warn("signOut:" + err.toString());
-                });
-            }
-            else {
-                this.clearDataOnSignOut();
-                TransitionUtils.navigateTo(PES.basename);
-            }
+           AuthUtils.signOut(this.auth);        
         }
 
-        clearDataOnSignOut(){
-            localStorage.removeItem('token');
-            localStorage.removeItem('currentTab');
-            sessionStorage.removeItem('SearchFormSession');
-            AuthUtils.removeUserInfo();
-        }
-    
         resetTimeout(){
             if(this.signOutTimer){
                 clearTimeout(this.signOutTimer);

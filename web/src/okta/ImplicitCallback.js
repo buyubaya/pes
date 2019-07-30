@@ -36,7 +36,7 @@ componentDidMount() {
     var hashIndex = url.indexOf('#');
     if(hashIndex < 0){
       console.log("No hash");
-      TransitionUtils.navigateTo(PES.basename);
+      TransitionUtils.navigateTo(this.environment.errorPages.pes500);
     }else{
       this.auth.handleAuthentication()
       .then(() => {
@@ -61,16 +61,5 @@ componentDidMount() {
 
   render() {
     return (<LoadingDots interval={100} dots={20} />);
-
-  //   if (this.state.authenticated === null) {
-  //     return (<LoadingDots interval={100} dots={20} />);
-  //   }
-
-  //   return (<div className='container'>
-  //     <p className='pes-intro-title color-link'>Plan Enquiry</p>
-  //     <p className='pes-text-belt'>
-  //       {this.state.error}
-  //     </p>
-  // </div>);
   }
 };

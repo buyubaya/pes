@@ -7,7 +7,7 @@ import TransitionUtils from '../utils/TransitionUtils';
 import AuthUtils from '../utils/AuthUtils';
 import EnvironmentUtils from '../utils/EnvironmentUtils';
 import * as ApplicationActions from '../actions/ApplicationActions';
-import { debug } from 'util';
+import Auth from '../okta/Auth';
 
 export default class ApiUtils {
 
@@ -116,6 +116,14 @@ export default class ApiUtils {
 
 		if (res && (res.status == 200 || res.status == 302)) { //eslint-disable-line no-lonely-if
 			this._onSuccess(onSuccess, res);			
+		}
+		else if (res.status == 401 ){
+			
+			var auth = new Auth({
+				...environment.oktaConfig,
+				history: []
+			  });
+			AuthUtils.signOut(auth);			
 		}
 		else
 		{

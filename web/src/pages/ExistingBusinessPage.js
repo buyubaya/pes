@@ -2,16 +2,9 @@ import React from 'react';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import AuthUtils from '../utils/AuthUtils';
-import SecurityUtils from '../utils/SecurityUtils';
-import TransitionUtils from '../utils/TransitionUtils';
+
 
 class ExistingBusinessPage extends React.Component {
-	componentWillMount(){
-		if(this.props.router.getCurrentLocation().pathname !== '/' && !SecurityUtils.isServicingRole()){
-			TransitionUtils.navigateTo(PES.basename);
-		}
-	}
-
 	componentDidMount(){
 		this._setContainerHeight();
 	}

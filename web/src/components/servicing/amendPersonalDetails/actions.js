@@ -56,6 +56,29 @@ const errorMessages = {
 };
 
 
+// VALIDATE DATE
+function isValidDate(date){
+    if(date){
+        const dateRegExp = /^((((?:((0?[1-9])|([12][0-9]))|30)\/(?:(0?[13-9]|10|11|12))|(?:31\/(?:(0?[13578]|10|12)))|(?:(0?[1-9])|(1[0-9])|(2[0-8]))\/0?2)\/(?:\d{4}))|(29\/0?2\/\d{2}(?:([02468][048])|([13579][26]))))$/;
+
+        if(dateRegExp.test(date)){
+            let d = date.split('/');
+            d[0] = ('0' + d[0]).substr(-2);
+            d[1] = ('0' + d[1]).substr(-2);
+            d = `${d[2]}-${d[1]}-${d[0]}`;
+
+            return moment(d).isValid();
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
+
 /******************** SUBMIT ********************/
 export const submit = (values, dispatch, props) => {
     let errors = {};
@@ -63,7 +86,6 @@ export const submit = (values, dispatch, props) => {
     const MAX_MONTHS_IN_FUTURE = 2;
     const niNumberRegExp = /^[a-zA-Z]{2}[0-9]{6}[a-zA-Z]$/g;
     const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    const dateRegExp = /^((((?:((0?[1-9])|([12][0-9]))|30)\/(?:([0]?[13-9]|10|11|12))|(?:31\/(?:([0]?[13578]|10|12)))|(?:(0?[1-9])|(1[0-9])|(2[0-8]))\/2)\/(?:\d{4}))|(29\/2\/\d{2}(?:([02468][048])|([159][26]))))$/;
     const amendType = _get(props, 'params.amendType');
 
 
@@ -317,7 +339,7 @@ export const submit = (values, dispatch, props) => {
         // Validate Date format
         if(
             !_isEmpty(addressEffectiveDate) &&
-            !dateRegExp.test(addressEffectiveDate)
+            !isValidDate(addressEffectiveDate)
         ){
             _set(errors, `address.${FIELD_NAMES.addressEffectiveDate}`, ERROR_MESSAGES.effectiveDateFormat);
         }
@@ -423,7 +445,7 @@ export const submit = (values, dispatch, props) => {
         // vaidate date format
         if(
             !_isEmpty(altAddressEffectiveDate) &&
-            !dateRegExp.test(altAddressEffectiveDate)
+            !isValidDate(altAddressEffectiveDate)
         ){
             _set(errors, `alternativeAddress.${FIELD_NAMES.altAddressEffectiveDate}`, ERROR_MESSAGES.effectiveDateFormat);
         }
@@ -603,7 +625,7 @@ export const submit = (values, dispatch, props) => {
         // Validate Date format
         if(
             !_isEmpty(contactDetailsEffectiveDate) && 
-            !dateRegExp.test(contactDetailsEffectiveDate)
+            !isValidDate(contactDetailsEffectiveDate)
         ){
             _set(errors, `contactDetails.${FIELD_NAMES.contactDetailsEffectiveDate}`, ERROR_MESSAGES.contactDetailsChangeDateFormat);
         }
@@ -686,11 +708,11 @@ export const submit = (values, dispatch, props) => {
         {
             _set(errors, `dateOfBirth.${FIELD_NAMES.dobOtherEvidenceType}`, ERROR_MESSAGES.otherEvidenceDOB1);
         }
-
+        
         // Validate Date format
         if(
             !_isEmpty(correctDateOfBirth) && 
-            !dateRegExp.test(correctDateOfBirth)
+            !isValidDate(correctDateOfBirth)
         ){
             _set(errors, `dateOfBirth.${FIELD_NAMES.correctDateOfBirth}`, ERROR_MESSAGES.dobDate);
         }

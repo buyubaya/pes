@@ -7,11 +7,11 @@ const withInputError = (Comp) => props => {
 			<Comp {...props} />
 		</div>
 		{
-			props.showError && props.meta.touched && props.meta.error && 
+			props.showError && props.meta.touched && props.meta.error && props.meta.error.trim() &&
 			<div className='help-block'>{HtmlUtils.htmlToReact(props.meta.error)}</div>
 		}
 		{
-			props.showWarn && props.meta.touched && props.meta.warning && 
+			props.showWarn && props.meta.touched && props.meta.warning && props.meta.warning.trim() &&
 			<div className='help-block'>{HtmlUtils.htmlToReact(props.meta.warning)}</div>
 		}
 	</div>

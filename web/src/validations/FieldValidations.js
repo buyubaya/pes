@@ -54,7 +54,7 @@ export const accountNumber = value => {
 
 export const sortCode = value => {
 	if(!!value){
-		return /^(\d{2}[-]\d{2}[-]\d{2})|(\d{6})/g.test(value) ? undefined : 'Invalid sort code';
+		return /^((\d{2}[-]\d{2}[-]\d{2})|(\d{6}))$/g.test(value) ? undefined : 'Invalid sort code';
 	}
 };
 

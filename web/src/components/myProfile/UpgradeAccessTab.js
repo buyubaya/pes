@@ -316,7 +316,7 @@ class UpgradeAccessTab extends React.Component {
     }
 
     submitInitial(values, dispatch, props){
-        const userId = _get(props, 'myProfile.userInfo.username');
+        let userId = _get(props, 'myProfile.userInfo.username');
 
         return submitInitial(values, dispatch, props)
         .then(
@@ -324,6 +324,9 @@ class UpgradeAccessTab extends React.Component {
                 this.props.changeTab && this.props.changeTab(MyProfileTabIDs.myAccount);
 
                 // UPDATE VALIDATION STATUS
+                // if(process.env.NODE_ENV === 'development'){
+                //     userId = 'lnguyen54@csc.com_1'; // Validating
+                // }
                 this.props.api.getUserValidationStatus(userId)
                 .then(data => {
                     this.props.actions.getUserValidationStatusSuccess({
@@ -353,7 +356,7 @@ class UpgradeAccessTab extends React.Component {
                 this.props.changeTab && this.props.changeTab(MyProfileTabIDs.myAccount);
 
                 // UPDATE USER INFO
-                const userId = AuthUtils.getUserId();
+                let userId = AuthUtils.getUserId();
                 this.props.api.getMyProfile({userId: userId}).then((res) => {
                     this.props.actions.getMyProfileSuccess(res);
                     AuthUtils.setUserInfo(JSON.stringify(res));   
@@ -365,6 +368,9 @@ class UpgradeAccessTab extends React.Component {
                 });
 
                 // UPDATE VALIDATION STATUS
+                // if(process.env.NODE_ENV === 'development'){
+                //     userId = 'lnguyen54@csc.com_2'; // Validated
+                // }
                 this.props.api.getUserValidationStatus(userId)
                 .then(data => {
                     // this.props.toggleTab && this.props.toggleTab('upgradeAccess', false);

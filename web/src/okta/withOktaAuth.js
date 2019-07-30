@@ -5,7 +5,6 @@ import Auth from './Auth';
 import EnvironmentUtils from '../utils/EnvironmentUtils';
 import AuthUtils from '../utils/AuthUtils';
 import TransitionUtils from '../utils/TransitionUtils';
-import secureStorage from '../utils/SecureStorage';
 
 import * as MyProfileApi from '../api/MyProfileApi';
 
@@ -16,7 +15,10 @@ const withOktaAuth = (WrappedComponent) => {
       super(props, context);
 
       this.environment = EnvironmentUtils.get('environment');
-      this.auth = new Auth(this.environment.oktaConfig);
+      this.auth = new Auth({
+        ...this.environment.oktaConfig,
+        history: []
+      });
 
       this.state = {
         authenticated: null,

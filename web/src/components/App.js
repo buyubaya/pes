@@ -19,6 +19,10 @@ import withInactivity  from './withInactivity';
 //Okta
 import withOktaAuth  from '../okta/withOktaAuth';
 
+// REFRESH OKTA SESSION
+import withOktaRefresh  from './withOktaRefresh';
+
+
 class App extends React.Component {
 	static propTypes = {
 		children: PropTypes.object.isRequired,
@@ -54,5 +58,6 @@ export default compose(
 	withOktaAuth,
 	connect(mapStateToProps),
 	withRouterConfig,
-	withInactivity
+	withInactivity,
+	withOktaRefresh
 )(App);
